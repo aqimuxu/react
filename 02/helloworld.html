@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helloworld</title>
+    <!--引入react核心库-->
+    <script src="src/react.development.js"></script>
+    <script src="src/react-dom.development.js"></script>
+</head>
+<body>
+    <div id='root'></div>
+    <script>
+        const div = React.createElement('div',{},'我是React创建的div');
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(div)
+
+    </script>
+
+
+</body>
+</html>

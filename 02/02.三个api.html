@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三个API</title>
+    <script src="src/react.development.js"></script>
+    <script src="src/react-dom.development.js"></script>
+</head>
+<body>
+    <button id="btn"></button>
+    <div id="root"></div>
+    <script>
+
+        const button = React.createElement('button',{
+            id:'btn',
+            type:'button',
+            className:'hello',
+            onClick:()=>{
+                alert('你点我干嘛')
+            }  //事件需要驼峰命名法
+        },'点我一下')
+        const div = React.createElement('div',{}, button)
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(div)
+
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click',()=>{
+            const button = React.createElement('button',{
+                id:'btn',
+                type:'button',
+                className:'hello',
+                onClick:()=>{
+                    alert('你点我干嘛')
+                }
+            },'click me')
+
+        })
+
+
+
+    </script>
+</body>
+</html>
