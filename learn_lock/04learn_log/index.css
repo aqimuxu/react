@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #DFDFDF;
+    margin: 0;
+}
+.logs{
+    width:800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #EAE2B7;
+
+}
+.item{
+/*    开启弹性盒*/
+    display: flex;
+    margin: 16px 0;
+    padding: 6px;
+    background-color: #FCBF46;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+/*设置日期样式*/
+.date{
+    width:90px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;   /*父元素没有设置高度，被子元素撑大，隐藏子元素的溢出*/
+}
+/*设置月份效果*/
+.month{
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #D62828;
+
+}
+.day{
+    height: 60px;
+    line-height: 60px;
+    font-size: 40px;
+}
+.content{
+    flex:auto;
+    text-align: center;
+    font-weight: bold;
+}
+.desc{
+    font-size: 16px;
+}
+.time{
+    color: #D62828;
+}

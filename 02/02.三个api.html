@@ -7,7 +7,7 @@
     <script src="src/react-dom.development.js"></script>
 </head>
 <body>
-    <button id="btn"></button>
+    <button id="btn">我是按钮</button>
     <div id="root"></div>
     <script>
 
@@ -19,7 +19,7 @@
                 alert('你点我干嘛')
             }  //事件需要驼峰命名法
         },'点我一下')
-        const div = React.createElement('div',{}, button)
+        const div = React.createElement('div',{}, '我是一个',button)
         const root = ReactDOM.createRoot(document.getElementById('root'))
 
         root.render(div)
@@ -35,7 +35,10 @@
                 }
             },'click me')
 
+            //重新在root中渲染一个button，之前的div没了
+            root.render(button)
         })
+
 
 
 

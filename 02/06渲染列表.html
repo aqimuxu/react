@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <script src="src/react.development.js"></script>
+    <script src="src/react-dom.development.js"></script>
+    <script src="src/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const arr = ['孙悟空','猪八戒','沙和尚']
+
+        const arr2 = arr.map(item=> <li>{item}</li>) //不用写大括号
+
+        const list = <ul>{arr2}</ul>
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(list)
+    </script>
+
+</body>
+</html>

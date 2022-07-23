@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsx</title>
+    <script src="src/react.development.js"></script>
+    <script src="src/react-dom.development.js"></script>
+    <script src="src/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const div = <div id='box'
+                         onClick={()=>{alert('hhh')}}
+                         style={{backgroundColor:"yellow"}}>
+            <button>
+                我是按钮
+            </button>
+        </div>
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(div)
+
+
+    </script>
+
+
+
+
+</body>
+</html>

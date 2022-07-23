@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://F:/nodejs/Node.js 开发实战/.idea/Node.js 开发实战.iml" filepath="F:/nodejs/Node.js 开发实战/.idea/Node.js 开发实战.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../nodejs/.idea/nodejs.iml" filepath="$PROJECT_DIR$/../nodejs/.idea/nodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react.iml" filepath="$PROJECT_DIR$/.idea/react.iml" />
+    </modules>
+  </component>
+</project>
