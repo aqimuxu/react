@@ -10,5 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="nodejs" />
     <orderEntry type="module" module-name="Node.js 开发实战" />
+    <orderEntry type="module" module-name="10_显示日期" />
+    <orderEntry type="module" module-name="11_修改Logs组件" />
   </component>
 </module>
