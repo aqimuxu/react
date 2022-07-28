@@ -1,10 +1,8 @@
-/*
-* 函数组件返回jsx
-* 组件首字母大写
-* */
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import './index.css'
+import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// React组件可以直接通过JSX渲染
+root.render(<App/>);
