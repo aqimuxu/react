@@ -1,13 +1,4 @@
 .app{
-    width: 300px;
-    height: 300px;
+    width: 800px;
     margin: 50px auto;
-    background-color: #bfa;
-    text-align: center;
-}
-
-.app button{
-    width: 100px;
-    font-size: 50px;
-    margin: 0 20px;
 }

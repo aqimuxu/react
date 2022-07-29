@@ -1,0 +1,22 @@
+/*设置日期样式*/
+.date{
+    width:90px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;   /*父元素没有设置高度，被子元素撑大，隐藏子元素的溢出*/
+}
+/*设置月份效果*/
+.month{
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #D62828;
+
+}
+.day{
+    height: 60px;
+    line-height: 60px;
+    font-size: 40px;
+}

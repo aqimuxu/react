@@ -1,24 +1,15 @@
+import React from 'react'
+import Logs from "./Components/Logs/Logs";
+import Card from "./Components/UI/Card/card";
+import LogsForm from "./Components/LogsForm/LogsForm";
+import './App.css'
 /*
-*   Webstrom中的快捷方式：
-*       rsc --> 函数组件（不带props）
-*       rsi --> 函数组件（带props）
-*       rcc --> 类组件
+* 类组件必须要继承React。Component
 * */
-
-import React, {Component} from 'react';
-import './App.css';
-import User from "./components/User";
-
-class App extends Component {
-    render() {
-        return (
-            <div className="app">
-                <User name='猪八戒' age={28} gender={'男'}/>
-            </div>
-        );
-    }
+const App=()=>{
+    return <div className={'app'}>
+        <LogsForm/>
+        <Logs/>
+    </div>
 }
-
 export default App;
-
-
