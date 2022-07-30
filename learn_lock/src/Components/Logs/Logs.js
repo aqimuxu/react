@@ -7,7 +7,7 @@ const Logs = (props) => {
 
 
     //将数据放入JSX中
-    const logItemDate = props.logsData.map(item => <LogItem key={item.id} date={item.date} desc={item.desc}
+    const logItemDate = props.logsData.map((item,index)=> <LogItem key={item.id} onDelLog={()=>props.onDelLog(index)} date={item.date} desc={item.desc}
                                                                                 time={item.time}/>);
     return (
         <Card className="logs">{

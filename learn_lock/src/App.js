@@ -36,6 +36,15 @@ const App=()=>{
         }
         ]
     )
+    const delLogByIndex=(index)=>{
+        setLogsData(prevState => {
+            const newLog=[...prevState]
+            newLog.splice(
+                index,1
+            );
+            return newLog
+        })
+    }
     //定义一个函数
     const saveLogHandler=(newLog)=>{
         //向新的日志中添加id
@@ -46,7 +55,7 @@ const App=()=>{
     }
     return <div className={'app'}>
         <LogsForm onSaveLog={saveLogHandler}/>
-        <Logs logsData={logsData}/>
+        <Logs logsData={logsData} onDelLog={delLogByIndex}/>
     </div>
 }
 export default App;

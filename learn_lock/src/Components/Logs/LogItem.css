@@ -17,3 +17,11 @@
 .time{
     color: #D62828;
 }
+.delete{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
