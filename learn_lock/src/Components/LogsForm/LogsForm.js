@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Card from "../UI/Card/card";
 import './LogsForm.css'
-const LogsForm = () => {
+const LogsForm = (props) => {
     const [inputDate,setInputDate]=useState('');
     const [inputDesc,setInputDesc]=useState('');
     const [inputTime,setInputTime]=useState('');
@@ -11,11 +11,12 @@ const LogsForm = () => {
     }
 
     const descChangeHandler=(e)=>{
-        setInputDesc(e.taget.value)
+        setInputDesc(e.target.value)
     }
 
     const timeChangeHandler=(e)=>{
-        setInputDesc(e.taget.value)
+
+        setInputTime(e.target.value)
     }
 
     const formSubmitHandler=(e)=>{
@@ -25,6 +26,7 @@ const LogsForm = () => {
             desc:inputDesc,
             time:inputTime
         }
+        props.onSaveLog(newLog)
         //清空表单
         setInputDesc('')
         setInputDate('')
@@ -35,7 +37,7 @@ const LogsForm = () => {
             <form onSubmit={formSubmitHandler}>
                 <div className={'form-item'}>
                     <label htmlFor="date">日期</label>
-                    <input onChange={dateChangeHandler} value={inputDate}id='date' type="date"/>
+                    <input onChange={dateChangeHandler} value={inputDate} id='date' type="date"/>
                 </div>
                 <div className={'form-item'}>
                     <label htmlFor="content">内容</label>
@@ -44,6 +46,7 @@ const LogsForm = () => {
                 <div className={'form-item'}>
                     <label htmlFor="time">时长</label>
                     <input onChange={timeChangeHandler} value={inputTime} id='time' type="number"/>
+                    {/*//只能写数字*/}
                 </div>
                 <div className={'form-btn'}>
                     <button>添加</button>
