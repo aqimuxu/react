@@ -7,8 +7,11 @@ const Logs = (props) => {
 
 
     //将数据放入JSX中
-    const logItemDate = props.logsData.map((item,index)=> <LogItem key={item.id} onDelLog={()=>props.onDelLog(index)} date={item.date} desc={item.desc}
+    let logItemDate = props.logsData.map((item,index)=> <LogItem key={item.id} onDelLog={()=>props.onDelLog(index)} date={item.date} desc={item.desc}
                                                                                 time={item.time}/>);
+    if(logItemDate.length===0){
+        logItemDate=<p className='no-logs'>没找到日志</p>
+    }
     return (
         <Card className="logs">{
             logItemDate   // 不要忘记大括号

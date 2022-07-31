@@ -4,6 +4,8 @@ import Card from "./Components/UI/Card/card";
 import LogsForm from "./Components/LogsForm/LogsForm";
 import './App.css'
 import {useState} from "react";
+import ConfirmModel from "./Components/UI/ConfirmModel/ConfirmModel";
+import BackDrop from "./Components/UI/BackDrop/BackDrop";
 /*
 * 类组件必须要继承React。Component
 * */
@@ -54,6 +56,7 @@ const App=()=>{
         setLogsData([newLog,...logsData])
     }
     return <div className={'app'}>
+
         <LogsForm onSaveLog={saveLogHandler}/>
         <Logs logsData={logsData} onDelLog={delLogByIndex}/>
     </div>
