@@ -47,6 +47,13 @@ const App=()=>{
             return newLog
         })
     }
+
+    const delLogById=(id)=>{
+        setLogsData(prevState => {
+            const newLog=prevState.filter(item=>item.id!==id) //这里是一个回调函数
+            return newLog
+        })
+    }
     //定义一个函数
     const saveLogHandler=(newLog)=>{
         //向新的日志中添加id
@@ -58,7 +65,7 @@ const App=()=>{
     return <div className={'app'}>
 
         <LogsForm onSaveLog={saveLogHandler}/>
-        <Logs logsData={logsData} onDelLog={delLogByIndex}/>
+        <Logs logsData={logsData} onDelLog={delLogById}/>
     </div>
 }
 export default App;
