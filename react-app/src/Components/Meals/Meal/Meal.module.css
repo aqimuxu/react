@@ -26,6 +26,7 @@ img{
 .PriceWrap{
     display: flex;
     justify-content: space-between;
+    padding-right: 40rem;
 }
 .Price{
     margin-top: 40rem;
