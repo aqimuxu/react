@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import classes from "./Counter.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus,faMinus} from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../../../Store/cart-context";
 /*
 * 引入fontawesome，安装依赖
 * npm i --save @fortawesome/fontawesome-svg-core
@@ -12,11 +13,12 @@ npm i --save @fortawesome/react-fontawesome@latest
 * */
 
 const Counter = (props) => {
+    const ctx=useContext(CartContext)
     const addButtonHandler=()=>{
-        props.onAdd(props.meal)
+        ctx.addItem(props.meal)
     }
     const subBottonHandler=()=>{
-        props.onSub(props.meal)
+        ctx.removeItem(props.meal)
     }
     return (
         <div className={classes.Counter}>

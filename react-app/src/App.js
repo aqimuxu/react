@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import classes from './App.module.css'
 import Meals from "./Components/Meals/Meals";
-
+import CartContext from "./Store/cart-context";
 const MEALS_DATA = [
     {
         id: '1',
@@ -60,7 +60,7 @@ const App = () => {
         totalPrice:0
     })
     //增加商品数量
-    const addMealHandler=(meal)=>{
+    const addItem=(meal)=>{
         //meal 要添加进购物车的商品
         //对购物车复制
         const newCart={...cartData}
@@ -78,7 +78,7 @@ const App = () => {
         setCartData(newCart)
     }
     //减少商品数量
-    const subMealHandler=(meal)=>{
+    const removeItem=(meal)=>{
         //对购物车复制
         const newCart={...cartData}
         //减少商品数量
@@ -93,13 +93,14 @@ const App = () => {
         setCartData(newCart)
     }
     return(
-        <div>
-            <Meals
-                mealsData={mealsData}
-                onAdd={addMealHandler}
-                onSub={subMealHandler}
-            />
-        </div>
+        <CartContext.Provider value={{...cartData,addItem,removeItem}}>
+            <div>
+                <Meals
+                    mealsData={mealsData}
+                />
+            </div>
+        </CartContext.Provider>
+
     )
 };
 
