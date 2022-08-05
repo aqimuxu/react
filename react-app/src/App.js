@@ -53,9 +53,52 @@ const MEALS_DATA = [
 const App = () => {
     //创建一个state用来存食物列表
     const [mealsData,setMealsData]=useState(MEALS_DATA)
+    //创建一个state存储购物车数据
+    const [cartData,setCartData]=useState({
+        items:[],
+        totalAmount:0,
+        totalPrice:0
+    })
+    //增加商品数量
+    const addMealHandler=(meal)=>{
+        //meal 要添加进购物车的商品
+        //对购物车复制
+        const newCart={...cartData}
+        //判断购物车中是否存在该商品
+        if(newCart.items.indexOf(meal)===-1){
+            //将meal添加进购物车
+            newCart.items.push(meal);
+            meal.amount=1;
+        }else{
+            meal.amount+=1
+        }
+        newCart.totalAmount+=1;
+        newCart.totalPrice+=meal.price;
+
+        setCartData(newCart)
+    }
+    //减少商品数量
+    const subMealHandler=(meal)=>{
+        //对购物车复制
+        const newCart={...cartData}
+        //减少商品数量
+        meal.amount-=1
+        //检查商品是否为0
+        if(meal.amount===0){
+            newCart.items.splice(newCart.items.indexOf(meal),1)
+        }
+        //修改商品总金额和数量
+        newCart.totalAmount-=1
+        newCart.totalPrice-=meal.price
+        setCartData(newCart)
+    }
     return(
         <div>
-            <Meals mealsData={mealsData}/>
+            <Meals
+                mealsData={mealsData}
+                onAdd={addMealHandler}
+                onSub={subMealHandler}
+            />
         </div>
     )
 };

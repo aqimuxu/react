@@ -12,21 +12,27 @@ npm i --save @fortawesome/react-fontawesome@latest
 * */
 
 const Counter = (props) => {
+    const addButtonHandler=()=>{
+        props.onAdd(props.meal)
+    }
+    const subBottonHandler=()=>{
+        props.onSub(props.meal)
+    }
     return (
         <div className={classes.Counter}>
             {
-                (props.amount&& props.amount!==0)?(
+                (props.meal.amount&& props.meal.amount!==0)?(
                     <>
-                        <button className={classes.Sub}>
+                        <button onClick={subBottonHandler} className={classes.Sub}>
                             <FontAwesomeIcon icon={faMinus}/>
                         </button>
-                        <span className={classes.Count}>{props.amount}</span>
+                        <span className={classes.Count}>{props.meal.amount}</span>
                     </>
                     ):null
             }
 
 
-            <button className={classes.Add}>
+            <button onClick={addButtonHandler} className={classes.Add}>
                 <FontAwesomeIcon icon={faPlus}/>
             </button>
         </div>
