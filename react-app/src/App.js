@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import classes from './App.module.css'
 import Meals from "./Components/Meals/Meals";
 import CartContext from "./Store/cart-context";
+import FilterMeals from "./Components/FilterMeals/FilterMeals";
+import Cart from "./Components/Cart/Cart";
 const MEALS_DATA = [
     {
         id: '1',
@@ -59,6 +61,11 @@ const App = () => {
         totalAmount:0,
         totalPrice:0
     })
+    //搜索框过滤
+    const filterHandler=(keyword)=>{
+        const newMealsData=MEALS_DATA.filter(item=>item.title.indexOf(keyword)!==-1);
+        setMealsData(newMealsData)
+    }
     //增加商品数量
     const addItem=(meal)=>{
         //meal 要添加进购物车的商品
@@ -95,10 +102,13 @@ const App = () => {
     return(
         <CartContext.Provider value={{...cartData,addItem,removeItem}}>
             <div>
+                <FilterMeals onFilter={filterHandler}/>
                 <Meals
                     mealsData={mealsData}
                 />
+                <Cart/>
             </div>
+
         </CartContext.Provider>
 
     )

@@ -4,7 +4,7 @@
     /*设置辅轴对齐方式*/
     align-items: center;
     padding: 30rem 20rem;
-    border-bottom: 1px #f2f2f2 solid;
+    border-bottom: 2rem #f2f2f2 solid;
 }
 .ImgBox{
     width: 280rem;
@@ -14,13 +14,13 @@ img{
 }
 .Title{
     font-weight: normal;
-    font-size: 18px;
+    font-size: 36rem;
     margin: 0;
 }
 .Desc{
     color: #131313;
     margin: 0;
-    font-size: 12px;
+    font-size: 24rem;
     padding-right: 40rem;
 }
 .PriceWrap{
@@ -31,9 +31,9 @@ img{
 .Price{
     margin-top: 40rem;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40rem;
 }
 .Price::Before{
     content: '￥';
-    font-size: 14px;
+    font-size: 28rem;
 }
