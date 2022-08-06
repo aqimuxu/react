@@ -10,6 +10,7 @@
     height: 80rem;
     background-color: #333;
     border-radius: 40px;
+    z-index: 9999;
 }
 .Icon{
     width: 80rem;
@@ -32,7 +33,7 @@
     font-size: 20rem;
     right:-10rem;
 }
-.Price{
+.Price,.NoMeal{
     display: flex;
     align-items: center;
     font-size: 36rem;
@@ -51,4 +52,11 @@
     width:200rem;
     border-radius: 50px;
     font-size: 36rem;
+}
+.NoMeal{
+    color: #eee;
+}
+.Disable{
+    background-color: #777;
+    color: #ccc;
 }

@@ -8,10 +8,11 @@ const Cart = () => {
         <div className={classes.Cart}>
             <div className={classes.Icon}>
                 <img src={iconImg} alt=""/>
-                <span className={classes.TotalAmount}>{ctx.totalAmount}</span>
+                {ctx.totalAmount===0?null:<span className={classes.TotalAmount}>{ctx.totalAmount}</span>}
             </div>
-            <p className={classes.Price}>{ctx.totalPrice}</p>
-            <button className={classes.Button}>去结算</button>
+            {ctx.totalPrice===0?<p className={classes.NoMeal}>未选择商品</p>:<p className={classes.Price}>{ctx.totalPrice}</p>}
+
+            <button className={`${classes.Button} ${ctx.totalAmount===0?classes.Disable:''}`}>去结算</button>
         </div>
     );
 };
