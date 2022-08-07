@@ -4,6 +4,7 @@ import Meals from "./Components/Meals/Meals";
 import CartContext from "./Store/cart-context";
 import FilterMeals from "./Components/FilterMeals/FilterMeals";
 import Cart from "./Components/Cart/Cart";
+import Backdrop from "./Components/UI/Backdrop/Backdrop";
 const MEALS_DATA = [
     {
         id: '1',
@@ -107,6 +108,7 @@ const App = () => {
                     mealsData={mealsData}
                 />
                 <Cart/>
+
             </div>
 
         </CartContext.Provider>
