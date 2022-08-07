@@ -5,6 +5,7 @@ import CartContext from "./Store/cart-context";
 import FilterMeals from "./Components/FilterMeals/FilterMeals";
 import Cart from "./Components/Cart/Cart";
 import Backdrop from "./Components/UI/Backdrop/Backdrop";
+import Confirm from "./Components/UI/Confirm/Confirm";
 const MEALS_DATA = [
     {
         id: '1',
@@ -100,8 +101,18 @@ const App = () => {
         newCart.totalPrice-=meal.price
         setCartData(newCart)
     }
+    const clearCart=()=>{
+        const newCart={...cartData};
+        //需要把购物车中商品的数量清零
+        newCart.items.map(item=>delete item.amount)
+        newCart.items=[];
+        newCart.totalPrice=0;
+        newCart.totalAmount=0;
+        setCartData(newCart)
+    }
     return(
-        <CartContext.Provider value={{...cartData,addItem,removeItem}}>
+        <CartContext.Provider value={{...cartData,addItem,removeItem,clearCart}}>
+
             <div>
                 <FilterMeals onFilter={filterHandler}/>
                 <Meals

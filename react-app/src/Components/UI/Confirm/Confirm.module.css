@@ -1,0 +1,35 @@
+.ConfirmOuter{
+    z-index: 9999;
+}
+.Confirm{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    margin:auto;
+    border-radius: 20px;
+    height: 300rem;
+    width: 650rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.ConfirmText{
+    font-size: 38rem;
+}
+.Cancel, .Ok{
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 160rem;
+    border-radius: 20px;
+    font-size: 28rem;
+    height: 60rem;
+}
+.Ok{
+    background-color: #FCBF49;
+    border: none;
+    margin-left: 50rem;
+}
