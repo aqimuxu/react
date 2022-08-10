@@ -8,7 +8,7 @@ const FilterMeals = (props) => {
     const [keyword,setKeyword]=useState('')
     useEffect(()=>{
         //一次输入完成才开始过滤
-        timer = setTimeout(()=>{
+        const timer = setTimeout(()=>{
             props.onFilter(keyword)
         },1000)
         //effect清理函数
