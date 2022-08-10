@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import classes from "./Cart.module.css";
 import iconImg from '../../asset/bag.png';
 import CartContext from "../../Store/cart-context";
@@ -9,6 +9,13 @@ const Cart = () => {
     const [showDetails,setShowDetails]=useState(false)
     //结账页的显示
     const [showCheckout,setShowCheckout]=useState(false)
+    //购物车数量为0，不显示购物车详情和结账页面
+    useEffect(()=>{
+        if(ctx.totalAmount===0){
+            setShowDetails(false)
+            setShowCheckout(false)
+        }
+    },[ctx])
     const toggleDetailsHandler=()=>{
         if(ctx.totalAmount===0) {
             setShowDetails(false)
